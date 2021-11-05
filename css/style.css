@@ -363,7 +363,7 @@ button {
 
 .portfolio-item {
   margin-bottom: 30px;
-  border: 1px solid var(--bg-color-card);
+  border-bottom: 1px solid var(--bg-color-card);
 }
 
 .portfolio-item:nth-last-of-type(-n + 3) {
