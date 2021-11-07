@@ -78,8 +78,17 @@ button {
   letter-spacing: 0.03em;
 }
 
-.title-hidden {
-  visibility: hidden;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .item-title {
@@ -146,9 +155,10 @@ button {
   margin-left: 93px;
 }
 
-.menu .item + .item {
-  margin-left: 50px;
+.menu .item:not(:last-child) {
+  margin-right: 50px;
 }
+
 .menu .link,
 .header-contact .link {
   display: block;
@@ -168,8 +178,8 @@ button {
   margin-left: auto;
 }
 
-.header-contact .item + .item {
-  margin-left: 50px;
+.header-contact .item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .header-contact .link {
@@ -238,7 +248,7 @@ button {
 }
 
 .hero .container {
-  max-width: 696px;
+  width: 696px;
 }
 
 .hero-title {
@@ -271,12 +281,11 @@ button {
 
 .features-item {
   display: block;
-  margin-left: auto;
-  max-width: 270px;
+  width: 270px;
 }
 
-.features-item + .features-item {
-  margin-left: 30px;
+.features-item:not(:nth-child(4n)) {
+  margin-right: 30px;
 }
 
 .features-item .item-title {
@@ -295,11 +304,10 @@ button {
 
 .about {
   display: flex;
-  margin-left: auto;
 }
 
-.about-item + .about-item {
-  margin-left: 30px;
+.about-item:not(:nth-child(3n)) {
+  margin-right: 30px;
 }
 
 .about-img,
@@ -318,15 +326,18 @@ button {
   flex-wrap: wrap;
 }
 
-.team-item + .team-item {
-  margin-left: 30px;
-}
-
 .team-item {
+  width: 270px;
+  margin-right: 30px;
+
   background-color: var(--accent-text-and-bg-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+
+.team-item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .item-desc {
@@ -352,8 +363,8 @@ button {
   margin-bottom: 50px;
 }
 
-.filter-list .item + .item {
-  margin-left: 8px;
+.filter-list .item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .filter-list .link {
@@ -384,16 +395,26 @@ button {
 
 .portfolio-item {
   margin-bottom: 30px;
-  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.portfolio-item:nth-child(3n) {
+  margin-right: 0;
 }
 
 .portfolio-item:nth-last-of-type(-n + 3) {
   margin-bottom: 0;
 }
 
-.portfolio-item:nth-of-type(3n + 1) {
-  margin-left: 0;
+/* ---------- Alternative ---------- */
+/* .portfolio-item:not(:nth-child(3n)) {
+  margin-right: 30px;
 }
+
+.portfolio-item:not(:nth-last-of-type(-n + 3)) {
+  margin-bottom: 30px;
+} */
+/* ---------- End Alternative ---------- */
 
 .portfolio .link {
   display: block;
